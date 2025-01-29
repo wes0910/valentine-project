@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #yesBtn {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #noBtn {
+            font-size: 20px;
+            padding: 10px 20px;
+            position: absolute;
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Would you be my Valentine? 💖</h1>
+    <button id="yesBtn">Yes 💕</button>
+    <button id="noBtn">DILI KO </button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="pasilyo.mp3"></audio>
+
+    <script>
+        let yesBtn = document.getElementById("yesBtn");
+        let noBtn = document.getElementById("noBtn");
+        let bgMusic = document.getElementById("bgMusic");
+
+        // Play music when "Yes" is clicked
+        yesBtn.addEventListener("click", function() {
+            bgMusic.play();
+            alert("YIIIEEEHHH HAHAHA SUGOT DAW SHA OHH!");
+        });
+
+        // Move the "No" button when hovered
+        noBtn.addEventListener("mouseover", function() {
+            let x = Math.random() * window.innerWidth * 0.8;
+            let y = Math.random() * window.innerHeight * 0.8;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body>
+</html>
